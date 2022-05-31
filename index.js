@@ -21,12 +21,11 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = function(){
- for(let i = 0;i<dataBelanjaan.length;i++){
-   console.log(i+1 +"."+dataBelanjaan[i].nama +"  "+dataBelanjaan[i].kuantitas);
- 
- } 
-}
+const listBelanjaan = (dataBelanjaan) => {
+  return dataBelanjaan.map((data) => {
+    return `- ${data.nama} x ${data.kuantitas}`;
+  });
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 const totalBelanjaan = (dataBelanjaan) => {
