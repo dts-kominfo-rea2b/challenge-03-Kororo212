@@ -29,15 +29,11 @@ const listBelanjaan = function(){
 }
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-listBelanjaan();
-const totalBelanjaan = function(){
-  let x = 0;
-  for(let u = 0;u<dataBelanjaan.length;u++){
-    x+=dataBelanjaan[u].harga * dataBelanjaan[u].kuantitas;
-   
-  }
-return x;
-}
+const totalBelanjaan = (dataBelanjaan) => {
+  return dataBelanjaan
+    .map((data) => data.harga * data.kuantitas)
+    .reduce((a, b) => a + b, 0);
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
